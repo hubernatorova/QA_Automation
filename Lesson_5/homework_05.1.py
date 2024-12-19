@@ -3,6 +3,7 @@
 # write code that will help us to get cars that satisfy search_criteria.
 # Cars should be sorted by price ascending.
 # We should print up to five (5) first found elements
+
 car_data = {
   'Mercedes': ('silver', 2019, 1.8, 'sedan', 50000),
   'Audi': ('black', 2020, 2.0, 'sedan', 55000),
@@ -44,6 +45,7 @@ car_data = {
   'Ford F-Series': ('gray', 2021, 3.5, 'pickup', 50000),
   'Nissan Titan': ('silver', 2018, 5.6, 'pickup', 35000)
 }
+# критерій пошуку автомобіля
 search_criteria = (2017, 1.6, 36000)
 
 # Створюємо порожній словник для результату
@@ -58,7 +60,7 @@ for cars, attributes in car_data.items():
   # розпаковуємо кортеж з критеріями пошука
   year_criteria, engine_criteria, price_criteria = search_criteria
 
-  # задаємо умови для пошука
+  # Задаємо умови для пошука
   if year >= year_criteria and engine_volume >= engine_criteria and price <= price_criteria:
     car_results[cars] = attributes
 
