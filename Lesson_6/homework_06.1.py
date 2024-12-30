@@ -22,3 +22,18 @@ if count_unique_symbols > 10:
     print(True)
 else:
     print(False)
+
+
+
+my_string = input("Enter your string: ")
+print(len(set())>=10)
+if len(set(my_string))>=10:
+    print(True)
+else:
+    print(False)
+
+
+lst = []
+for i in my_string:
+    if i not in lst:
+        lst.append(i)
