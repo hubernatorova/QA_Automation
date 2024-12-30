@@ -13,3 +13,9 @@ for i in lst1:
         lst2.append(i)
 
 print(lst2)
+
+for i in lst1:
+    if type(i) == str:
+        lst2.append(i)
+
+print(lst2)
