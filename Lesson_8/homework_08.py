@@ -30,7 +30,7 @@ def homework(lst):
             lst2 = [int(i) for i in lst1]
             res = sum(lst2)
             result.append(res)
-        except:
+        except ValueError:
             res = "Не можу це зробити!"
             result.append(res)
     return result

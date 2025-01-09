@@ -1,6 +1,3 @@
-import lst
-
-
 def calculate_sums(strings):
     results = []
     for string in strings:
