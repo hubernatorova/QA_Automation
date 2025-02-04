@@ -15,7 +15,6 @@ team_size, який вказує на кількість розробників 
 
 from abc import ABC, abstractmethod
 
-
 # Завдання 1
 class Employee:
     def __init__(self, name, salary):
@@ -25,21 +24,22 @@ class Employee:
 
 class Manager(Employee):
     def __init__(self, name, salary, department):
-        super().__init__(name, salary)
+        Employee.__init__(self, name, salary)  # Явный вызов конструктора Employee
         self.department = department
 
 
 class Developer(Employee):
     def __init__(self, name, salary, programming_language):
-        super().__init__(name, salary)
+        Employee.__init__(self, name, salary)  # Явный вызов конструктора Employee
         self.programming_language = programming_language
 
 
 class TeamLead(Manager, Developer):
     def __init__(self, name, salary, department, programming_language, team_size):
-        Manager.__init__(self, name, salary, department)
-        Developer.__init__(self, name, salary, programming_language)
-        self.team_size = team_size
+        # Явный вызов конструктора Manager и Developer
+        Manager.__init__(self, name, salary, department)  # Инициализация Manager
+        Developer.__init__(self, name, salary, programming_language)  # Инициализация Developer
+        self.team_size = team_size  # Атрибут TeamLead
 
 
 # Тест на наявність атрибутів у TeamLead
@@ -50,6 +50,7 @@ assert hasattr(team_lead, 'department')
 assert hasattr(team_lead, 'programming_language')
 assert hasattr(team_lead, 'team_size')
 print("Test passed: All required attributes exist in TeamLead")
+
 
 
 # Завдання 2
